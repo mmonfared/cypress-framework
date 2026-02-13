@@ -1,11 +1,14 @@
 name: End-to-end tests
+
 on: push
+
 jobs:
   cypress-run:
     runs-on: ubuntu-24.04
 
+    # Make Matrix run on all browsers
     strategy:
-      fail-fast: false   # Important: don't cancel other browser if one fails
+      fail-fast: false   # Don't cancel other browser if one fails
       matrix:
         browser: [electron, chrome]
 
@@ -24,3 +27,12 @@ jobs:
         with:
           browser: ${{ matrix.browser }}
           record: true
+        env:
+          CYPRESS_BROWSER: ${{ matrix.browser }}
+      
+      - name: Upload Reports as .zip Artifact
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: cypress-reports-${{ matrix.browser }}
+          path: cypress/reports

@@ -1,7 +1,5 @@
 # Cypress generated files
-/cypress/reports/videos/
-/cypress/reports/screenshots/
-/cypress/reports/accessibility/
+/cypress/reports
 /cypress/downloads/
 
 # Cypress binary cache

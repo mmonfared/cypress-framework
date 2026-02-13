@@ -12,12 +12,23 @@ module.exports = defineConfig({
     watchForFileChanges: false,
     retries: { "openMode": 0, "runMode": 1 },
     pageLoadTimeout: 20000,
-    defaultCommandTimeout: 15000,
     projectId: "pu82hs",
+    reporter: 'cypress-mochawesome-reporter',
+    reporterOptions: {
+        // charts: true,
+        reportPageTitle: 'custom-title',
+        embeddedScreenshots: true,
+        inlineAssets: true,
+        saveAllAttempts: false,
+        videoOnFailOnly: true,
+        reportDir: `cypress/reports/mochawesome-${process.env.CYPRESS_BROWSER || 'electron'}-${new Date().toISOString().split('T')[0]}`,
+        reportFilename: `report-${process.env.CYPRESS_BROWSER || 'electron'}-[datetime]`,
+  },
     e2e: {
         setupNodeEvents(on, config) {
             // Include the grep plugin
             require('@bahmutov/cy-grep/src/plugin')(config);
+            require('cypress-mochawesome-reporter/plugin')(on);
             return config;
         },
         baseUrl: "https://www.saucedemo.com/",

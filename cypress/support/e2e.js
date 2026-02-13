@@ -19,6 +19,7 @@ import '@4tw/cypress-drag-drop'
 import "cypress-real-events"
 import 'cypress-if'
 import './commands'
+import 'cypress-mochawesome-reporter/register';
 
 
 

@@ -34,6 +34,7 @@
     "cypress": "15.9.0",
     "cypress-if": "^1.13.2",
     "cypress-map": "^1.53.2",
+    "cypress-mochawesome-reporter": "^4.0.2",
     "cypress-plugin-api": "^2.11.2",
     "cypress-plugin-steps": "^1.2.1",
     "cypress-real-events": "^1.15.0",
