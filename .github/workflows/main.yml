@@ -1,0 +1,26 @@
+name: End-to-end tests
+on: push
+jobs:
+  cypress-run:
+    runs-on: ubuntu-24.04
+
+    strategy:
+      fail-fast: false   # Important: don't cancel other browser if one fails
+      matrix:
+        browser: [electron, chrome]
+
+    env:
+      CYPRESS_username: ${{ secrets.CYPRESS_USERNAME }}
+      CYPRESS_password: ${{ secrets.CYPRESS_PASSWORD }}
+      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      # Install dependencies with caching
+      # and run all Cypress tests
+      - name: Cypress run on ${{ matrix.browser }}
+        uses: cypress-io/github-action@v7
+        with:
+          browser: ${{ matrix.browser }}
+          record: true

@@ -7,8 +7,8 @@ module.exports = defineConfig({
     e2e: {
         ...commonConfigs.e2e,
 
-        baseUrl: "https://www.qa.saucedemo.com/",
-        ApiBaseUrl: "https://qa.jsonplaceholder.typicode.com",
+        baseUrl: "https://www.saucedemo.com/", // https://www.qa.saucedemo.com/ in real projects
+        ApiBaseUrl: "https://jsonplaceholder.typicode.com",
         environment: "qa",
     }
 });

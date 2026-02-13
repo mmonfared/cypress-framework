@@ -13,7 +13,7 @@ module.exports = defineConfig({
     retries: { "openMode": 0, "runMode": 1 },
     pageLoadTimeout: 20000,
     defaultCommandTimeout: 15000,
-    projectId: "YOUR ID HERE",
+    projectId: "pu82hs",
     e2e: {
         setupNodeEvents(on, config) {
             // Include the grep plugin
