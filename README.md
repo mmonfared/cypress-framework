@@ -10,7 +10,8 @@ Application under test: https://www.saucedemo.com/
 - **Cross-Browser Testing**: Chrome, Edge, and WebKit support
 - **GitHub Actions CI**: Automated test execution on push with parallel browser matrix
 - **Cypress Cloud Integration**: Cloud recording and dashboard for test results and analytics
-- **Test Organization**: Structured test suite with UI, API, Visual, and Data-Cy tests
+- **HTML Test Reports**: Beautiful, interactive Mochawesome HTML reports with embedded screenshots for failed tests
+- **Test Organization**: Structured test suite with UI and API
 - **Tag-Based Test Filtering**: Run specific test suites using tags (@smoke, @qa, @ui, etc.)
 - **Page Object Model**: Maintainable test structure with reusable page objects
 - **API Testing**: Built-in API testing capabilities
@@ -179,6 +180,7 @@ Each environment has its own configuration file that extends the base `cypress.c
 
 This framework includes:
 
+- **cypress-mochawesome-reporter**: Beautiful HTML test reports
 - **@bahmutov/cy-grep**: Test filtering by tags
 - **cypress-plugin-api**: Enhanced API testing
 - **cypress-plugin-steps**: Step-by-step test reporting
@@ -223,10 +225,21 @@ describe('API Tests', { tags: ['@api'] }, () => {
 
 ## 📊 Reports
 
-Test results are stored in:
+This framework uses **cypress-mochawesome-reporter** to generate beautiful HTML test reports.
+
+**Report Features:**
+- Interactive HTML reports with test results
+- Embedded screenshots for failed tests
+- Inline assets for easy sharing
+- Browser-specific report directories
+
+**Report Locations:**
+- **HTML Reports**: `cypress/reports/mochawesome-{browser}-{date}/`
 - **Screenshots**: `cypress/reports/screenshots/`
 - **Videos**: `cypress/reports/videos/`
 - **Downloads**: `cypress/downloads/`
+
+Reports are automatically generated after each test run with browser and date information in the folder name.
 
 ## 🔄 CI/CD Integration
 
