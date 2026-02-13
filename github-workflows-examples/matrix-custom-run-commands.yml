@@ -1,0 +1,24 @@
+name: End-to-end tests
+on: push
+jobs:
+  cypress-run:
+    runs-on: ubuntu-24.04
+
+    strategy:
+      fail-fast: false   # Important: don't cancel other browser if one fails
+      matrix:
+        script: [qa:run:cloud, qa:run:chrome:cloud]
+
+    env:
+      CYPRESS_username: ${{ secrets.CYPRESS_USERNAME }}
+      CYPRESS_password: ${{ secrets.CYPRESS_PASSWORD }}
+      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        
+      - name: Cypress run with "${{ matrix.script }}"
+        uses: cypress-io/github-action@v7
+        with:
+          command: npm run ${{ matrix.script }}

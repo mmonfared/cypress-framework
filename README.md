@@ -58,6 +58,9 @@ cp cypress.env.json.dist cypress.env.json
 
 ```
 cypress-framework/
+├── .github/
+│   └── workflows/
+│       └── main.yml         # GitHub Actions CI workflow
 ├── cypress/
 │   ├── e2e/
 │   │   ├── api/              # API test specifications
@@ -68,6 +71,9 @@ cypress-framework/
 │   │   ├── e2e.js           # Global configuration
 │   │   ├── page-objects/    # Page Object Models
 │   │   └── utils.js         # Utility functions
+├── github-workflows-examples/ # Example GitHub Actions workflows
+│   ├── matrix-browsers.yml  # Browser matrix example
+│   └── matrix-custom-run-commands.yml # Matrix with Custom npm scripts example
 ├── cypress.config.js         # Base Cypress configuration
 ├── dev.config.js            # Development environment config
 ├── qa.config.js             # QA environment config
@@ -236,6 +242,11 @@ This framework includes automated CI/CD pipeline with GitHub Actions:
 
 **Workflow Configuration:**
 The workflow is defined in `.github/workflows/main.yml` and runs tests across multiple browsers in parallel.
+
+**Sample Workflows:**
+Check the `github-workflows-examples/` folder for additional workflow examples:
+- `matrix-browsers.yml` - Example of browser matrix strategy
+- `matrix-custom-run-commands.yml` - Example using custom npm scripts in matrix
 
 **Required GitHub Secrets:**
 
