@@ -8,11 +8,12 @@ Application under test: https://www.saucedemo.com/
 
 - **Multi-Environment Support**: Separate configurations for Dev, QA, and Production environments
 - **Cross-Browser Testing**: Chrome, Edge, and WebKit support
+- **GitHub Actions CI**: Automated test execution on push with parallel browser matrix
+- **Cypress Cloud Integration**: Cloud recording and dashboard for test results and analytics
 - **Test Organization**: Structured test suite with UI, API, Visual, and Data-Cy tests
 - **Tag-Based Test Filtering**: Run specific test suites using tags (@smoke, @qa, @ui, etc.)
 - **Page Object Model**: Maintainable test structure with reusable page objects
 - **API Testing**: Built-in API testing capabilities
-- **Cloud Recording**: Cypress Cloud integration for test result recording
 - **Code Quality**: ESLint and Prettier configuration for consistent code style
 
 ## 📋 Prerequisites
@@ -47,6 +48,11 @@ cp cypress.env.json.dist cypress.env.json
     "password": "your-password"
 }
 ```
+
+5. Update Cypress Cloud Project ID:
+   - Open `cypress.config.js`
+   - Replace `projectId: "YOUR ID HERE"` with your actual Cypress Cloud project ID
+   - Get your project ID from [Cypress Cloud Dashboard](https://cloud.cypress.io/)
 
 ## 📁 Project Structure
 
@@ -215,6 +221,33 @@ Test results are stored in:
 - **Screenshots**: `cypress/reports/screenshots/`
 - **Videos**: `cypress/reports/videos/`
 - **Downloads**: `cypress/downloads/`
+
+## 🔄 CI/CD Integration
+
+### GitHub Actions
+
+This framework includes automated CI/CD pipeline with GitHub Actions:
+
+**Features:**
+- Automated test execution on every push
+- Parallel browser matrix (Electron, Chrome)
+- Cypress Cloud recording with test results dashboard
+- Automatic dependency caching for faster builds
+
+**Workflow Configuration:**
+The workflow is defined in `.github/workflows/main.yml` and runs tests across multiple browsers in parallel.
+
+**Required GitHub Secrets:**
+
+Add these secrets in your GitHub repository (Settings → Secrets and variables → Actions → Repository secrets):
+
+1. `CYPRESS_USERNAME` - Test user username
+2. `CYPRESS_PASSWORD` - Test user password
+3. `CYPRESS_RECORD_KEY` - Cypress Cloud recording key (get from Cypress Dashboard)
+
+**View Results:**
+- GitHub Actions: Check the Actions tab in your repository
+- Cypress Cloud: Visit [Cypress Cloud Dashboard](https://cloud.cypress.io/) to view detailed test results, screenshots, and videos
 
 ## 🐛 Debugging
 
