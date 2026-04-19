@@ -13,7 +13,7 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-import 'cypress-plugin-api'
+import '@bahmutov/cy-api'
 import 'cypress-plugin-steps'
 import '@4tw/cypress-drag-drop'
 import "cypress-real-events"

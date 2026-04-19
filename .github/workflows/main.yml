@@ -1,10 +1,16 @@
 name: End-to-end tests
 
+# Giving proper GitHub permission for deploying on github pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 on: push
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
 
     # Make Matrix run on all browsers
     strategy:

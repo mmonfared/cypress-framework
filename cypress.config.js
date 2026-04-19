@@ -36,7 +36,6 @@ module.exports = defineConfig({
         environment: "qa",
         grepFilterSpecs: true,
         grepOmitFiltered: true,
-        experimentalPromptCommand: true,
     }
 });
 

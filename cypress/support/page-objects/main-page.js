@@ -2,7 +2,7 @@ class MainPage {
     // Header
     static cartButton = '[data-test="shopping-cart-link"]'
     static menuButton = "#react-burger-menu-btn"
-    static carBadge = ".shopping_cart_badge"
+    static cartBadge = ".shopping_cart_badge"
 
     // Products
     static addToCartButton = (name) => `[data-test="add-to-cart-sauce-labs-${name}"]`

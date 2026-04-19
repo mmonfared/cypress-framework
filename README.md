@@ -45,8 +45,8 @@ cp cypress.env.json.dist cypress.env.json
 ```json
 {
     "CYPRESS_RECORD_KEY": "your-cypress-cloud-key",
-    "username": "your-username",
-    "password": "your-password"
+    "username": "standard_user",
+    "password": "secret_sauce"
 }
 ```
 
@@ -182,7 +182,7 @@ This framework includes:
 
 - **cypress-mochawesome-reporter**: Beautiful HTML test reports
 - **@bahmutov/cy-grep**: Test filtering by tags
-- **cypress-plugin-api**: Enhanced API testing
+- **@bahmutov/cy-api**: Enhanced API testing
 - **cypress-plugin-steps**: Step-by-step test reporting
 - **@4tw/cypress-drag-drop**: Drag and drop support
 - **cypress-real-events**: Real browser events
@@ -295,8 +295,8 @@ Add these to your `cypress.env.json`:
 ```json
 {
     "CYPRESS_RECORD_KEY": "your-key",
-    "username": "test-user",
-    "password": "test-password",
+    "username": "standard_user",
+    "password": "secret_sauce",
 }
 ```
 

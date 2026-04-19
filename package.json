@@ -30,21 +30,21 @@
   },
   "devDependencies": {
     "@4tw/cypress-drag-drop": "^2.3.1",
-    "@bahmutov/cy-grep": "^2.1.0",
-    "cypress": "15.9.0",
+    "@bahmutov/cy-grep": "^3.0.4",
+    "@bahmutov/cy-api": "^2.3.0",
+    "cypress": "15.14.1",
     "cypress-if": "^1.13.2",
-    "cypress-map": "^1.53.2",
+    "cypress-map": "^1.56.0",
     "cypress-mochawesome-reporter": "^4.0.2",
-    "cypress-plugin-api": "^2.11.2",
     "cypress-plugin-steps": "^1.2.1",
     "cypress-real-events": "^1.15.0",
-    "cypress-recurse": "^1.37.1",
-    "eslint": "^9.38.0",
-    "eslint-plugin-cypress": "^5.2.0",
+    "cypress-recurse": "^1.37.2",
+    "eslint": "^10.2.1",
+    "eslint-plugin-cypress": "^6.3.1",
     "eslint-plugin-no-only-tests": "^3.3.0",
-    "find-cypress-specs": "^1.54.8",
-    "playwright-webkit": "^1.58.2",
-    "prettier": "^3.6.2",
-    "uuid": "^13.0.0"
+    "find-cypress-specs": "^1.54.12",
+    "playwright-webkit": "^1.59.1",
+    "prettier": "^3.8.3",
+    "uuid": "^14.0.0"
   }
 }
