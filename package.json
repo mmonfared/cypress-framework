@@ -2,6 +2,7 @@
   "name": "cypress-framework",
   "version": "1.4.0",
   "description": "Cypress Test Automation Framework",
+  "author": "Moe Monfared",
   "scripts": {
     "cy:open": "cypress open",
     "cy:run": "cypress run",
